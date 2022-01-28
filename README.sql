@@ -13,8 +13,17 @@
         id BIGSERIAL NOT NULL PRIMARY KEY, 
         column_name VARCHAR(50) NOT NULL,
         column_name BOOLEAN NOT NULL,
-        column_name INT NOT NULL CHECK(price_range >= 1 AND price_range <= 5)
+        column_name INT NOT NULL CHECK(column_name >= 1 AND column_name <= 5)
     );
+
+-- example for creating table with foreign key constraints
+    CREATE TABLE reviews (
+            id BIGSERIAL NOT NULL PRIMARY KEY,
+            column_name BIGINT NOT NULL REFERENCES referenced_table_name(referenced_table_column_name),
+            column_name VARCHAR(50) NOT NULL,
+            column_name TEXT NOT NULL,
+            column_name INT NOT NULL CHECK(column_name >= 1 AND column_name <= 5)
+        ); 
 
 -- to list tables: \d
 
@@ -34,4 +43,5 @@
         VALUES (
            value1, value2, value3
         );
-            
+
+

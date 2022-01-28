@@ -22,13 +22,13 @@ const UpdateRestaurant = () => {
     fetchData();
   }, []);
 
-  const handleUpdate = async () => {
-    const res = await RestaurantFinder.put(`/${id}`, {
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    await RestaurantFinder.put(`/${id}`, {
       name: name,
       location: location,
       price_range: priceRange,
     });
-    console.log(res);
     history.push("/");
   };
 
@@ -67,7 +67,7 @@ const UpdateRestaurant = () => {
         </div>
         <button
           type="submit"
-          onClick={handleUpdate}
+          onClick={(e) => handleUpdate(e)}
           className="btn btn-primary"
         >
           Update
