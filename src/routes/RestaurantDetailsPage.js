@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import AddReview from "../components/AddReview";
 import Reviews from "../components/Reviews";
-import StarRating from "../components/StarRating";
 import { RestaurantContext } from "../context/RestaurantContext";
 
 const RestaurantDetailsPage = () => {
@@ -15,20 +14,21 @@ const RestaurantDetailsPage = () => {
     try {
       const fetchData = async () => {
         const { data } = await RestaurantFinder.get(`/${id}`);
-        setSelectedRestaurant(data.data.restaurant);
+        setSelectedRestaurant(data.data);
       };
       fetchData();
     } catch (error) {
       console.log(error);
     }
   }, []);
+  console.log(selectedRestaurant);
 
   return (
     <div>
       {selectedRestaurant && (
         <>
           <div className="mt-3">
-            <Reviews />
+            <Reviews reviews={selectedRestaurant.reviews} />
           </div>
           <AddReview />
         </>
