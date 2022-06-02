@@ -32,6 +32,13 @@
 -- example for adding columns:
     ALTER TABLE table_name ADD COLUMN column_name data_type;
 
+-- example for setting column with the NOT NULL constraint when altering table
+    ALTER TABLE table_name ADD COLUMN column_name data_type NOT NULL DEFAULT 52;
+    ALTER TABLE table_name ALTER COLUMN column_name DROP DEFAULT;
+
+-- example for updating column data type
+    ALTER TABLE table_name ALTER COLUMN column_name TYPE data_type;
+
 -- example for deleting columns:
     ALTER TABLE table_name DROP COLUMN column_name;
 
