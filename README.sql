@@ -51,4 +51,12 @@
            value1, value2, value3
         );
 
+-- table example with composite primary key and default timestamp
+    CREATE TABLE table_name (
+        col_1 BIGINT NOT NULL, 
+        col_2 BIGINT NOT NULL, 
+        date_created timestamp DEFAULT NOW(), 
+        PRIMARY KEY(pickup_id, label_no)
+    );
+
 
