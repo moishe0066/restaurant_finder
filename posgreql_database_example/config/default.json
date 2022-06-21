@@ -1,0 +1,14 @@
+{
+  "connectWise": {
+    "host": "api-na.myconnectwise.net",
+    "clientId": "e58d3c7e-6fc6-4d47-817e-2a9ddd0a342e",
+    "apiKey": "b2tndGVjaCtCaFhqRTh4SDJmVUZDek5QOmpUeUhjMlEwWnNMcGhhMnY="
+  },
+  "postgres": {
+    "user": "devadmin",
+    "host": "10.126.11.120",
+    "password": "Welcome1!",
+    "database": "warehouse",
+    "port": 5432
+  }
+}
